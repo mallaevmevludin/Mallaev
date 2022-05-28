@@ -1,6 +1,18 @@
+@font-face {
+    font-family: AppleTitle;
+    src: url(/font/SF-Pro-Display-Regular.otf);
+}
+
+@font-face {
+    font-family: AppleThin;
+    src: url(/font/SF-Pro-Display-Light.otf);
+}
+
+
+
 * {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: AppleTitle;
 }
 
 .wrapper {
@@ -46,11 +58,10 @@ p#title {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: 300;
+    font-family: AppleThin;
 }
 
 h1#title {
-    font-weight: 500;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -58,7 +69,7 @@ h1#title {
 
 .title {
     width: 100%;
-    min-height: 10vh;
+    min-height: 9vh;
 }
 
 .button {
@@ -84,18 +95,21 @@ input:hover {
     background-color: rgb(28, 28, 28);
     color: white;
     transition: 0.6s;
+    min-height: 30px;
 }
 
 input:active {
     background-color: rgb(28, 28, 28);
     color: white;
-    transition: 0.6s; 
+    transition: 0.6s;
+    min-height: 30px; 
 }
 
 input:focus {
     background-color: rgb(28, 28, 28);
     color: white;
     transition: 0.6s; 
+    min-height: 30px;
 }
 
 
@@ -114,6 +128,7 @@ p.footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: AppleThin;
 }
 
 
