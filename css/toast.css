@@ -79,6 +79,7 @@
 	display: inline-block;
 	margin-right: 10px;
 	cursor: pointer;
+    outline: none;
 }
 
 .toastjs-btn--custom {
