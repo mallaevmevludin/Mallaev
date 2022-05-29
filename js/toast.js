@@ -87,7 +87,7 @@ Toast.prototype._open = function () {
         customButtons = customButtons.join('');
     }
 
-    this.toastEl.innerHTML = '\n        <p>' + this.options.message + '</p>\n        <button type="button" class="toastjs-btn toastjs-btn--close">Close</button>\n        ' + customButtons + '\n    ';
+    this.toastEl.innerHTML = '\n        <p>' + this.options.message + '</p>\n        <button type="button" class="toastjs-btn toastjs-btn--close">Ok</button>\n        ' + customButtons + '\n    ';
 
     this.focusedElBeforeOpen = document.activeElement;
     document.querySelector('.toastjs-btn--close').focus();
@@ -119,5 +119,14 @@ ready.onclick = function() {
     message: 'Приносим свои извинения. <br> Данный раздел пока недоступен',
     type: 'danger'
   });
+}
+
+let what = document.getElementById('what');
+
+what.onclick = function () {
+    new Toast({
+        message: 'Приносим свои извинения. <br> Данный раздел пока недоступен',
+        type: 'danger'
+      });
 }
 
