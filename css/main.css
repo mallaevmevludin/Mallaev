@@ -69,7 +69,11 @@ h1#title {
 
 .title {
     width: 100%;
-    min-height: 9vh;
+    min-height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .button {
@@ -130,6 +134,9 @@ p.footer {
     align-items: center;
     font-family: AppleThin;
 }
+
+
+
 
 
 
