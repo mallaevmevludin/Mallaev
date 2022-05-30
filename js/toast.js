@@ -112,21 +112,4 @@ Toast.prototype._init = function () {
     });
 };
 
-let ready = document.getElementById('ready');
-
-ready.onclick = function() {
-    new Toast({
-    message: 'Приносим свои извинения. <br> Данный раздел пока недоступен',
-    type: 'danger'
-  });
-}
-
-let what = document.getElementById('what');
-
-what.onclick = function () {
-    new Toast({
-        message: 'Приносим свои извинения. <br> Данный раздел пока недоступен',
-        type: 'danger'
-      });
-}
 
