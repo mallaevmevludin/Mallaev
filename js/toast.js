@@ -87,7 +87,7 @@ Toast.prototype._open = function () {
         customButtons = customButtons.join('');
     }
 
-    this.toastEl.innerHTML = '\n        <p>' + this.options.message + '</p>\n        <button type="button" class="toastjs-btn toastjs-btn--close">Ok</button>\n        ' + customButtons + '\n    ';
+    this.toastEl.innerHTML = '\n        <p>' + this.options.message + '</p>\n        <button type="button" class="toastjs-btn toastjs-btn--close">Закрыть</button>\n        ' + customButtons + '\n    ';
 
     this.focusedElBeforeOpen = document.activeElement;
     document.querySelector('.toastjs-btn--close').focus();
@@ -111,5 +111,17 @@ Toast.prototype._init = function () {
         _this4._addEventListeners();
     });
 };
+
+let ready = document.getElementById('ready');
+
+ready.onclick = function() {
+    new Toast({
+        message: 'Внимание! Игра находится на стадии завершения разработки',
+        type: 'danger'
+      });
+}
+
+
+
 
 
