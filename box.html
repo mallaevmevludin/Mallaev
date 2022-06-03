@@ -68,7 +68,7 @@
     let ground = Matter.Bodies.rectangle(910,450,250,10,{ isStatic: true});
 
     let mouse = Matter.Mouse.create(render.canvas);
-    let mouseCoonstraint = Matter.MouseConstraint.create(engine, {
+    let mouseConstraint = Matter.MouseConstraint.create(engine, {
       mouse: mouse,
       constraint: {
         render: {visible: false}
@@ -91,21 +91,20 @@
     });
 
     let firing = false;
+     Matter.Events.on(mouseConstraint,'enddrag', function(e) {
+      if(e.body === ball) firing = true;
+});
 
-    Matter.Events.on(mouseCoonstraint, 'enddrag', function(e){
-      if (e.body === ball) firing = true;
-    });
+    Matter.Events.on(engine,'afterUpdate', function() {
+  if (firing && Math.abs(ball.position.x-300) < 20 && Math.abs(ball.position.y-600) < 20) {
+      ball = Matter.Bodies.circle(300, 600, 20);
+      Matter.World.add(engine.world, ball);
+      sling.bodyB = ball;
+      firing = false;
+  }
+});
 
-    Matter.Events.on(engine, 'afterUpdate', function(){
-      if(firing && Math.abs(ball.postition.x-250)<20 && Math.abs(ball.postition.y-350)<20) {
-        ball = Matter.Bodies.circle(250,350,20);
-        Matter.World.add(engine.world, ball);
-        sling.bodyB = ball;
-        firing = false;
-      }
-    });
-
-    Matter.World.add(engine.world,[stack,ground,ball,sling, mouseCoonstraint]);
+    Matter.World.add(engine.world,[stack,ground,ball,sling, mouseConstraint]);
 
     Matter.Engine.run(engine);
     Matter.Render.run(render);
